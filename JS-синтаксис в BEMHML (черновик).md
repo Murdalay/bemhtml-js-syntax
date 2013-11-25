@@ -207,7 +207,7 @@ match(this.block === 'link').match(this._mode === 'attrs')({ href: this.ctx.url 
     <td><code>block</code></td>
     <td>имя блока</td>
     <td>идентификатор <code>[a-zA-Z0-9-]+ </code> или произвольное js-выражение</td>
-    <td><pre><code>block('b-menu'), block ("b-menu"), block('b' + '-menu')</code></pre></td>
+    <td><pre><code>block('b-menu'), block("b-menu"), block('b' + '-menu')</code></pre></td>
 </tr>
 <tr>
     <td><code>elemMatch</code></td>
