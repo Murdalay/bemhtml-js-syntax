@@ -192,13 +192,13 @@ match(подпредикат1, подпредикат2, подпредикат3)
 
 Например:
 
-```(js)
+```js
 match(this.block === 'link', this._mode === 'tag', this.ctx.url)('a');
 ```
 
 Так же, набор подпредикатов может быть записан каскадом:
 
-```(js)
+```js
 match(this.block === 'link').match(this._mode === 'tag').match(this.ctx.url)('a');
 ```
 
@@ -248,7 +248,7 @@ block b-menu, block 'b-menu', block 'b' + '-menu'
 ```
 
 Пример в JS-синтаксисе:
-```(js)
+```js
 block('b-menu'), block("b-menu"), block('b' + '-menu')
 ```
 ***
@@ -270,7 +270,7 @@ block b-menu, elem item
 ```
 
 Пример в JS-синтаксисе:
-```(js)
+```js
 block('b-menu')(elemMatch('item')), block('b-menu').elemMatch('item')
 ```
 ***
@@ -293,7 +293,7 @@ block b-head-logo, mod size big
 ```
 
 Пример в JS-синтаксисе:
-```(js)
+```js
 block('b-head-logo')(mod('size', 'big')),  block('b-head-logo').mod('size', 'big')
 ```
 ***
@@ -316,7 +316,7 @@ block b-head-logo, elem text, elemMod size big
 ```
 
 Пример в JS-синтаксисе:
-```(js)
+```js
 block('b-head-logo')(elemMatch('text')(mods('size', 'big')))
 ```
 ***
@@ -342,7 +342,7 @@ block('foo').elemMatch('bar')
 
 Ключевое слово `elemMatch` для записи произвольного подпредиката об элементе было добавлено, чтобы позволить выполнять шаблоны без компиляции:
 
-```(js)
+```js
 block('my-block')
     .elemMatch(function() { return this.elem === 'e1' || this.elem === 'e2'  })
         .tag()('span')
@@ -404,7 +404,7 @@ block('my-block')
 
 В JS-синтаксисе для записи произвольного предикатного выражения используется ключевое слово `match`. Например:
 
-```(js)
+```js
 match(this.ctx.url)(
         tag()('a'), //выставляет текущей моду tag и передает 'a' аргументом
         attrs()({ href: this.ctx.url }) //выставляет текущей моду attrs и передает хеш аргументом 
@@ -506,7 +506,7 @@ match(произвольный предикат)(тело)
 
 В JS-синтаксисе возможна аналогичная запись вложенности:
 
-```(js)
+```js
 this.block === 'link' {
     this._mode === 'tag': 'a'
     this._mode === 'attrs': { href: this.ctx.url }
@@ -515,7 +515,7 @@ this.block === 'link' {
 
 Данная запись эквивалентна следующей:
 
-```(js)
+```js
 match(this.block === 'link').match(this._mode === 'tag')('a');
 match(this.block === 'link').match(this._mode === 'attrs')({ href: this.ctx.url });
 ```
@@ -525,7 +525,7 @@ match(this.block === 'link').match(this._mode === 'attrs')({ href: this.ctx.url 
 
 Например шаблон:
 
-```(js)
+```js
 this.block === 'link' {
     this._mode === 'tag': 'a'
     this._mode === 'attrs': { href: this.ctx.url }
@@ -534,7 +534,7 @@ this.block === 'link' {
 
 может быть записан в виде:
 
-```(js)
+```js
 block('link')(
     tag()('a'),
     attrs()({ href: this.ctx.url })
@@ -554,7 +554,7 @@ this.ctx.url {
 
 В JS-синтаксисе тело шаблона передается хелперу первым аргументом, а подшаблоны следующими:
 
-```(js)
+```js
 match(this.ctx.url)(
     'a',
     mods('not-link', 'yes')('span')
@@ -564,7 +564,7 @@ match(this.ctx.url)(
 
 Глубина вложенности подшаблонов не ограничена:
 
-```(js)
+```js
 block('link')(
     tag()('span'),
     match(this.ctx.url)(
