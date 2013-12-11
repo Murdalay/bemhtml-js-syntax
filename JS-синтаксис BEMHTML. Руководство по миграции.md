@@ -41,9 +41,8 @@ JavaScript-синтаксис BEMHTML-шаблонов имеет следующ
 
 Для перехода на JS-синтаксис можно:
 
-* воспользоваться версией `project-stub`, использующей `bem-core` (ветка [bem-core](https://github.com/bem/project-stub/tree/bem-core)) ;
-* использовать пакет [bem-tools v1.0](https://github.com/bem/bem-tools/tree/release-1.0.0).
-* самостоятельно установить необходимые пакеты — [bem-xjst](https://github.com/bem/bem-xjst), [bemhtml-compat](https://github.com/bem/bemhtml-compat), модуль технологии [BEMHTML API v2](https://github.com/bem/bem-core/blob/v1/.bem/techs/bemhtml.js).
+* воспользоваться версией `project-stub`, использующей `bem-core` (ветка [bem-core](https://github.com/bem/project-stub/tree/bem-core));
+* самостоятельно установить необходимые пакеты — [bem-xjst](https://github.com/bem/bem-xjst), [bemhtml-compat](https://github.com/bem/bemhtml-compat), модуль технологии пакеиа bem-tools [BEMHTML API v2](https://github.com/bem/bem-core/blob/v1/.bem/techs/bemhtml.js).
 
 Модуль технологии `BEMHTML`, поддерживающий JS-синтаксис, реализован с [API v2 технологии](http://ru.bem.info/tools/bem/bem-tools/tech-modules/#%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-api-v2-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8) bem-tools. Для использования его в проекте требуется пакет bem-tools с версией не ниже 0.6.4.
 
